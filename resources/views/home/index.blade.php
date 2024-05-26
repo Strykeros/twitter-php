@@ -20,6 +20,7 @@
             <div class="form-group d-flex flex-column">
                 <label for="postText">What’s happening?</label>
                 <textarea id="postText" name="postText" placeholder="Share your thoughts..." required></textarea>
+                <p>Maximum tweet length - 280 characters.</p>
             </div>
             <div class="form-group d-flex flex-column">
                 <label for="postImage">Upload Image:</label>
@@ -39,7 +40,6 @@
                 <img src="{{ asset('storage/' . $post->image) }}" class="img-fluid" alt="...">
                 @endif
                 <p class="card-text"><small class="text-muted">Posted on {{ $post->created_at->format('M d, Y') }}</small></p>
-
                 @if (Auth::id() == $post->user_id)
                 <form action="{{ route('posts-destroy', $post) }}" method="POST">
                     @csrf
