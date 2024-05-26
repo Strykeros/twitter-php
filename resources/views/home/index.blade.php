@@ -8,11 +8,11 @@
 <body>
     @include('components.header')
 
-    @if(auth()->user())
+    @auth
         <h1>logged in</h1> 
     @else
         <h1>hello, guest! login or register to get started.</h1>   
-    @endif
+    @endauth
     hello
 </body>
 </html>
